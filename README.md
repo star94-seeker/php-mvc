@@ -1,2 +1,3 @@
 # php-mvc
-A simple PHP MVC(Model-View-Controller) framework.
+
+-Simple, free and open-source MVC PHP framework for building web applications.

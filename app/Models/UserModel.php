@@ -6,7 +6,7 @@ use System\Model;
 
 class UserModel extends Model
 {
-    public function checkLogin(String $email, String $password)
+    public function checkLogin(string $email, string $password)
     {
         $stmt = $this->db->prepare('SELECT id, name FROM admin where email = ? and password = ?');
         $stmt->execute([$email, md5($password)]);

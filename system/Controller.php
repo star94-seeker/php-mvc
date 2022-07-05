@@ -6,7 +6,7 @@ abstract class Controller
 {
     protected $routeParams = [];
 
-    public function __construct(Array $routeParams)
+    public function __construct(array $routeParams)
     {
         $this->routeParams = $routeParams;
     }

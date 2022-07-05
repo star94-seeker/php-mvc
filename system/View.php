@@ -4,7 +4,7 @@ namespace System;
 
 class View
 {
-    public static function render(String $view, array $args = []): void
+    public static function render(string $view, array $args = []): void
     {
         extract($args, EXTR_SKIP);
         $file = "../views/" . $view;
@@ -15,7 +15,7 @@ class View
         }
     }
 
-    public static function renderTemplate(String $view, array $args = []): void
+    public static function renderTemplate(string $view, array $args = []): void
     {
         static $twig  = null;
         if ($twig === null) {

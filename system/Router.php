@@ -19,7 +19,7 @@ class Router
     protected $params = [];
 
 
-    public function add(String $route, array $params = []): void
+    public function add(string $route, array $params = []): void
     {
         $route = preg_replace('/\//', '\\/', $route);
 
@@ -40,7 +40,7 @@ class Router
         return $this->routes;
     }
 
-    public function match(String $url): bool
+    public function match(string $url): bool
     {
         foreach ($this->routes as $route => $params) {
             if (preg_match($route, $url, $matches)) {
@@ -61,7 +61,7 @@ class Router
         return $this->params;
     }
 
-    public function dispatch(String $url): void
+    public function dispatch(string $url): void
     {
         $url = $this->removeQueryStringVariables($url);
 
@@ -93,19 +93,19 @@ class Router
         }
     }
 
-    protected function convertToStudlyCaps(String $string): string
+    protected function convertToStudlyCaps(string $string): string
     {
         return str_replace(' ', '', ucwords(str_replace('-', ' ', $string)));
     }
 
 
-    private function convertToCamelCase(String $string): string
+    private function convertToCamelCase(string $string): string
     {
         return lcfirst($this->convertToStudlyCaps($string));
     }
 
 
-    protected function removeQueryStringVariables(String $url): string
+    protected function removeQueryStringVariables(string $url): string
     {
         if ($url != '') {
             $parts = explode('&', $url, 2);

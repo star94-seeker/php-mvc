@@ -13,7 +13,7 @@
         <div class="main">
             <div class="form-group">
                 <label>Username : </label>
-                <input class="form-control" type="text" placeholder="Enter Username" name="email" required>
+                <input class="form-control" type="email" placeholder="Enter Username" name="email" required>
             </div>
             <div class="form-group">
                 <label>Password : </label>

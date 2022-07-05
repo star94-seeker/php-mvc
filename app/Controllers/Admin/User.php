@@ -24,7 +24,7 @@ class User extends  Controller
     public function login()
     {
 
-        (!($this->validateInput()) || !($this->validateEmail($_POST['email']))) ? redirectTo('index') : null;
+        (!($this->validateInput()) || !($this->validateEmail($_POST['email']))) ? redirectTo('/admin/user/index') : null;
 
         $user = $this->user->checkLogin($_POST['email'], $_POST['password']);
 
@@ -72,7 +72,7 @@ class User extends  Controller
     }
 
 
-    public function validateEmail(String $email): bool
+    public function validateEmail(string $email): bool
     {
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return true;
@@ -81,7 +81,7 @@ class User extends  Controller
         }
     }
 
-    public function validatePassword(String $password): bool
+    public function validatePassword(string $password): bool
     {
         if (strlen($password) < 4) {
             return false;
